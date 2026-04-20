@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRC Report – 2026-04-20 19:18 UTC</title>
+  <style>
+    :root {
+      --primary: #1a56db;
+      --critical: #e02424;
+      --high: #ff5a1f;
+      --medium: #c27803;
+      --low: #057a55;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg); color: var(--text); padding: 24px; }
+    h1 { font-size: 1.75rem; color: var(--primary); margin-bottom: 4px; }
+    h2 { font-size: 1.2rem; margin: 24px 0 12px; border-bottom: 2px solid var(--border);
+          padding-bottom: 6px; color: var(--primary); }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+             gap: 16px; margin-bottom: 24px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+             padding: 16px; text-align: center; }
+    .card .value { font-size: 2rem; font-weight: 700; }
+    .card .label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+    .critical { color: var(--critical); }
+    .high     { color: var(--high); }
+    .medium   { color: var(--medium); }
+    .low      { color: var(--low); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem;
+             background: var(--card); border-radius: 8px; overflow: hidden; }
+    th { background: #f3f4f6; text-align: left; padding: 10px 12px;
+          font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+          color: var(--muted); }
+    td { padding: 10px 12px; border-top: 1px solid var(--border); vertical-align: top; }
+    tr:hover { background: #f9fafb; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px;
+              font-size: 0.75rem; font-weight: 600; }
+    .badge-critical { background: #fde8e8; color: var(--critical); }
+    .badge-high     { background: #feecdc; color: var(--high); }
+    .badge-medium   { background: #fdf6b2; color: var(--medium); }
+    .badge-low      { background: #def7ec; color: var(--low); }
+    .badge-implemented  { background: #def7ec; color: var(--low); }
+    .badge-partial      { background: #fdf6b2; color: var(--medium); }
+    .badge-planned      { background: #e1effe; color: var(--primary); }
+    .badge-not-impl     { background: #fde8e8; color: var(--critical); }
+    .score-bar-wrap { background: #e5e7eb; border-radius: 4px; height: 8px;
+                       width: 100%; min-width: 80px; }
+    .score-bar { height: 8px; border-radius: 4px; background: var(--primary); }
+    footer { margin-top: 32px; font-size: 0.75rem; color: var(--muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>🛡 GRC Status Report</h1>
+  <p class="meta">Generated: 2026-04-20 19:18 UTC | Organisation: Your Organisation</p>
+
+  <h2>Risk Summary</h2>
+  <div class="grid">
+    <div class="card"><div class="value">3</div><div class="label">Total Risks</div></div>
+    <div class="card"><div class="value critical">1</div><div class="label">Critical</div></div>
+    <div class="card"><div class="value high">2</div><div class="label">High</div></div>
+    <div class="card"><div class="value medium">0</div><div class="label">Medium</div></div>
+    <div class="card"><div class="value low">0</div><div class="label">Low</div></div>
+    <div class="card"><div class="value">3</div><div class="label">Open</div></div>
+  </div>
+
+  <h2>Top Risks</h2>
+  <table>
+    <thead><tr>
+      <th>#</th><th>Title</th><th>Category</th>
+      <th>Score</th><th>Level</th><th>Status</th><th>Owner</th>
+    </tr></thead>
+    <tbody><tr><td>1</td><td>Unencrypted S3 buckets</td><td>Cloud Security</td><td><strong>20</strong>/25</td><td><span class='badge badge-critical'>Critical</span></td><td>Open</td><td>Security Team</td></tr><tr><td>2</td><td>LLM prompt injection</td><td>AI/ML Risk</td><td><strong>16</strong>/25</td><td><span class='badge badge-high'>High</span></td><td>Open</td><td>AI Governance Team</td></tr><tr><td>3</td><td>Stale IAM access keys</td><td>Cloud Security</td><td><strong>12</strong>/25</td><td><span class='badge badge-high'>High</span></td><td>Open</td><td>Cloud Ops</td></tr></tbody>
+  </table>
+
+  <h2>Compliance Scores</h2>
+  <table>
+    <thead><tr>
+      <th>Framework</th><th>Score</th><th>Progress</th>
+      <th>Implemented</th><th>Partial</th><th>Not Implemented</th><th>Total</th>
+    </tr></thead>
+    <tbody><tr><td>CSA CCM</td><td><strong>13.2%</strong></td><td><div class='score-bar-wrap'><div class='score-bar' style='width:13.2%;background:#e02424'></div></div></td><td>2</td><td>1</td><td>16</td><td>19</td></tr><tr><td>ISO 27001</td><td><strong>16.7%</strong></td><td><div class='score-bar-wrap'><div class='score-bar' style='width:16.7%;background:#e02424'></div></div></td><td>2</td><td>1</td><td>12</td><td>15</td></tr><tr><td>NIST AI RMF</td><td><strong>13.9%</strong></td><td><div class='score-bar-wrap'><div class='score-bar' style='width:13.9%;background:#e02424'></div></div></td><td>2</td><td>1</td><td>15</td><td>18</td></tr><tr><td>NIST CSF</td><td><strong>10.4%</strong></td><td><div class='score-bar-wrap'><div class='score-bar' style='width:10.4%;background:#e02424'></div></div></td><td>2</td><td>1</td><td>21</td><td>24</td></tr><tr><td>SOC 2</td><td><strong>17.9%</strong></td><td><div class='score-bar-wrap'><div class='score-bar' style='width:17.9%;background:#e02424'></div></div></td><td>2</td><td>1</td><td>11</td><td>14</td></tr></tbody>
+  </table>
+
+  <h2>Policy Summary</h2>
+  <table>
+    <thead><tr>
+      <th>Title</th><th>Policy ID</th><th>Category</th>
+      <th>Version</th><th>Status</th><th>Owner</th><th>Review Date</th>
+    </tr></thead>
+    <tbody><tr><td>AI Governance Policy</td><td><code>POL-002</code></td><td>AI Governance</td><td>1.0</td><td><span class='badge badge-implemented'>Approved</span></td><td>AI Governance Team</td><td>—</td></tr><tr><td>Cloud Security Policy</td><td><code>POL-001</code></td><td>Cloud Security</td><td>1.0</td><td><span class='badge badge-implemented'>Approved</span></td><td>Security Team</td><td>—</td></tr></tbody>
+  </table>
+
+  <footer>GRC Tool v1.0 | Cloud &amp; AI Governance Platform</footer>
+</body>
+</html>
