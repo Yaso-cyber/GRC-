@@ -11,8 +11,11 @@ import urllib.error
 from typing import Optional
 
 
-OLLAMA_DEFAULT_URL = "http://localhost:11434"
-OLLAMA_DEFAULT_MODEL = "llama3"
+import os
+
+
+OLLAMA_DEFAULT_URL = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+OLLAMA_DEFAULT_MODEL = os.environ.get("GRC_OLLAMA_MODEL", "llama3.2:3b")
 
 SYSTEM_PROMPT = """You are an expert GRC (Governance, Risk & Compliance) analyst specialising
 in Cloud Security and AI Governance. You have deep knowledge of NIST CSF, NIST AI RMF,
